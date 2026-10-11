@@ -1,8 +1,5 @@
 package POO;
 
-import java.sql.SQLOutput;
-import java.util.Objects;
-
 public class Membro {
     private String nome;
     private int data;
@@ -52,14 +49,6 @@ public class Membro {
 
     }
 
-    void Emprestar() {
-        if ( !Podeempreestar() ) {
-            System.out.println("Voce nao pode emprestar, chegou no limite de livros");
-        }
-        else {
-            QtLivro++;
-        }
-    }
 
 
 

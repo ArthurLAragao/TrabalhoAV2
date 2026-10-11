@@ -12,11 +12,20 @@ public class Livros {
 
     }
 
-    void emprestar(){
-        quantdisp -= quantdisp;
-        System.out.println("livro emprestado...");
-        System.out.println("quantidade restante: "+ quantdisp);
+    Boolean Podeempreestar() {
+        return Membro.getQtLivros() <= getCategoria().getMaxLivro();
+
     }
+
+        void emprestar() {
+            if ( !Podeempreestar() ) {
+                System.out.println("Voce nao pode emprestar, chegou no limite de livros");
+            }
+            else {
+                getMembro().getQtLivros()++;
+
+            }
+        }
     void devolver() {
         quantdisp += quantdisp;
         System.out.println("livro devolvido");
