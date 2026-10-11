@@ -7,11 +7,11 @@ public class Membro {
     Categoria categoria;
     int QtLivro;
 
-
-    if (categoria == null) {
-        System.out.println("O Membro precisa de uma categoria");
+    void VerifCateg(){
+        if (categoria == null) {
+            System.out.println("O Membro precisa de uma categoria");
+        }
     }
-
 
     Membro(String nome, int data, String email, Categoria categoria, int QtLivro) {
         this.nome = nome;
@@ -27,6 +27,7 @@ public class Membro {
         return nome;
     }
     int getData() {
+
         return data;
     }
     String getEmail() {
@@ -44,13 +45,21 @@ public class Membro {
         System.out.println("Categoria nova: " + this.categoria);
     }
 
-    Boolean Podeempreestar() {
-        return this.QtLivro <= getCategoria().getMaxLivro();
+
+    Boolean Podeempreestar(Membro membro) {
+        return QtLivro < getCategoria().getMaxLivro();
 
     }
 
+    void emprestar() {
+        if ( !Podeempreestar() ) {
+            System.out.println("Voce nao pode emprestar, chegou no limite de livros");
+        }
+        else {
+            QtLivro++;
 
-
+        }
+    }
 
 
 

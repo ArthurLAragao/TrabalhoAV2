@@ -3,31 +3,17 @@ package POO;
 public class Livros {
     private String titulo;
     private String autor;
-    static int quantdisp;
+    private int quantdisp;
 
     Livros(String titulo,String autor,int quantdisp ){
         this.titulo = titulo;
         this.autor = autor;
-        Livros.quantdisp = quantdisp;
+        this.quantdisp = quantdisp;
 
     }
 
-    Boolean Podeempreestar() {
-        return membro.getQtLivros() <= getCategoria().getMaxLivro();
-
-    }
-
-        void emprestar() {
-            if ( !Podeempreestar() ) {
-                System.out.println("Voce nao pode emprestar, chegou no limite de livros");
-            }
-            else {
-                getMembro().getQtLivros()++;
-
-            }
-        }
     void devolver() {
-        quantdisp += quantdisp;
+        quantdisp++;
         System.out.println("livro devolvido");
         System.out.println("quantidade restante: "+ quantdisp);
 
