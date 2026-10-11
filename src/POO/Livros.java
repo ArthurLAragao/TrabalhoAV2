@@ -13,7 +13,7 @@ public class Livros {
     }
 
     Boolean Podeempreestar() {
-        return Membro.getQtLivros() <= getCategoria().getMaxLivro();
+        return membro.getQtLivros() <= getCategoria().getMaxLivro();
 
     }
 
