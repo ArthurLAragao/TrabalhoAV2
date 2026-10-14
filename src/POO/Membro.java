@@ -13,12 +13,11 @@ public class Membro {
         }
     }
 
-    Membro(String nome, int data, String email, Categoria categoria, int QtLivro) {
+    public Membro(String nome, int data, String email, Categoria categoria) {
         this.nome = nome;
         this.data = data;
         this.email = email;
         this.categoria = categoria;
-        this.QtLivro = 0;
 
     }
 
@@ -27,7 +26,6 @@ public class Membro {
         return nome;
     }
     int getData() {
-
         return data;
     }
     String getEmail() {
@@ -46,7 +44,7 @@ public class Membro {
     }
 
 
-    Boolean Podeempreestar(Membro membro) {
+    Boolean Podeempreestar() {
         return QtLivro < getCategoria().getMaxLivro();
 
     }

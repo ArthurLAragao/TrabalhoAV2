@@ -53,7 +53,7 @@ public class Restricoes {
         }
 
         String getRenovacao() {
-            return email;
+            return renovacao;
         }
 
         void setRenovacao(String nRenovacao) {
