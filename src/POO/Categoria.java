@@ -1,42 +1,41 @@
 package POO;
 
 public abstract class Categoria {
-        private int prazo;
-        private double multa;
-        private int maxLivro;
-        private boolean renovar;
+    private final int prazo;
+    private final double multa;
+    private final int maxLivro;
+    private final boolean renovar;
 
-        public Categoria(int prazo, double multa, int maxLivro, boolean renovar) {
-            this.prazo = prazo;
-            this.multa = multa;
-            this.maxLivro = maxLivro;
-            this.renovar = renovar;
-        }
+    public Categoria(int prazo, double multa, int maxLivro, boolean renovar) {
+        this.prazo = prazo;
+        this.multa = multa;
+        this.maxLivro = maxLivro;
+        this.renovar = renovar;
+    }
 
-        public int getPrazo() {
-            return prazo;
-        }
+    public int getPrazo() {
+        return prazo;
+    }
 
-        public double getMulta() {
-            return multa;
-        }
+    public double getMulta() {
+        return multa;
+    }
 
-        public int getMaxLivro() {
-            return maxLivro;
-        }
+    public int getMaxLivro() {
+        return maxLivro;
+    }
 
-        public boolean getRenovar() {
-            return renovar;
-        }
+    public boolean getRenovar() {
+        return renovar;
+    }
 
-        public abstract String getNome();
-        @Override
-        public String toString() {
-            return getNome();
-        }
+    public double getDescontoMulta() {
+        return 0;
+    }
 
+    public abstract String getNome();
 
-
-
+    public String toString() {
+        return getNome();
+    }
 }
-
