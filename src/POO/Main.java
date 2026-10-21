@@ -102,6 +102,7 @@ class BibliotecaSimulada extends SistemaBiblioteca {
         this.dataAtual = dataAtual;
     }
 
+    
     @Override
     LocalDate hoje() {
         return dataAtual;
