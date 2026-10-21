@@ -10,6 +10,9 @@ public class Membro {
     private Categoria categoria;
     private ArrayList<Emprestimo> emprestimos = new ArrayList<>();
 
+
+
+    
     public Membro(String nome, LocalDate data, String email, Categoria categoria) {
         if (nome == null || nome.isBlank() || email == null || email.isBlank()) {
             throw new IllegalArgumentException("Informe nome e email.");
