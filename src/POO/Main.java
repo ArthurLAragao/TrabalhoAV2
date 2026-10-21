@@ -10,6 +10,7 @@ public class Main {
         System.out.println("=== FASE 1: Setup Inicial ===");
         biblioteca.exibirConsultasGlobais();
 
+        
         System.out.println("=== FASE 2: Criar Membros e Livros ===");
 
         Membro joao = new Membro("João", dataCadastro, "joao@mail.com", new Padrao());
@@ -29,6 +30,7 @@ public class Main {
         biblioteca.cadastrarLivro(new Livros("Vidas Secas", "Graciliano Ramos", 1));
         System.out.println("Membros e Livros cadastrados com sucesso!\n");
 
+        
         System.out.println("=== FASE 3: Realizar Empréstimos (10/10/2026) ===");
         Emprestimo emp1 = biblioteca.realizarEmprestimo(joao, biblioteca.buscarLivro("O Cortiço"));
         Emprestimo emp2 = biblioteca.realizarEmprestimo(maria, biblioteca.buscarLivro("Grande Sertão: Veredas"));
@@ -42,6 +44,8 @@ public class Main {
         if (emp4 != null) emp4.exibir();
         if (emp5 != null) emp5.exibir();
 
+
+        
         System.out.println("\n=== FASE 4: Renovações (Testando Sobrecarga) ===");
         System.out.printf("Valor renovação padrão: R$ %.2f\n", emp3.calcularTaxaRenovacao());
         System.out.printf("Valor renovação com cupom LEITOR10: R$ %.2f\n", emp3.calcularTaxaRenovacao("LEITOR10"));
@@ -52,6 +56,8 @@ public class Main {
         System.out.println("\nTentando renovar para o João (Categoria Padrão - não permite renovação):");
         emp1.renovar();
 
+
+        
         System.out.println("\n=== FASE 5: Atrasos e Cálculo de Multas (Simulando Dias) ===");
         biblioteca.setDataAtual(LocalDate.of(2026, 10, 25));
         emp1.exibir();
@@ -63,17 +69,25 @@ public class Main {
         emp1.exibir();
         System.out.printf("Multa atualizada de João: R$ %.2f\n", emp1.calcularMulta());
 
+
+        
         System.out.println("\n=== FASE 6: Devoluções ===");
         emp1.devolver();
 
+
+        
         System.out.println("\n=== FASE 7: Consultas de Membros ===");
         System.out.println("Categoria atual da Maria: " + maria.getCategoria().getNome());
         System.out.println("Livros emprestados com a Maria atualmente: " + maria.getQtLivro());
 
+
+        
         System.out.println("\n=== FASE 8: Mudança de Categoria ===");
         joao.trocarCategoria(new Premium());
         System.out.println("João mudou para a categoria: " + joao.getCategoria().getNome());
 
+
+        
         System.out.println("\n=== FASE 9: Demonstração de Restrições (Classe Restricoes) ===");
         Restricoes regraTrabalho = new Restricoes(
                 "Limitado por categoria de membro",
